@@ -370,36 +370,6 @@ Tested on: Windows 11, Intel i7-11th Gen, 16GB RAM
 - Binary files: 20-30% compression ratio
 - Deduplication: 100% for identical content
 
----
-
-## 🎓 Interview Talking Points
-
-### Data Structures
-**Q:** How do you store file content efficiently?  
-**A:** Content-addressable storage using SHA-1 hashing. Same content always produces the same hash, enabling automatic deduplication. Stored in `.mygit/objects/XX/YYYYYYYY` with zlib compression.
-
-**Q:** Explain your tree structure.  
-**A:** Merkle tree where each node (tree object) contains entries for files (blobs) and subdirectories (subtrees). Each entry has mode, name, and SHA-1 hash. Parent hash changes if any child changes, enabling efficient change detection.
-
-### Algorithms
-**Q:** How does your merge algorithm work?  
-**A:** Three-way merge using common ancestor. Compare current branch, target branch, and merge base. If both branches modified the same file differently → conflict. Otherwise, take the modified version automatically.
-
-**Q:** What diff algorithm did you use?  
-**A:** Python's `difflib.unified_diff` which implements Myers' diff algorithm (O(n+d²) where d = edit distance). For large files, this is much faster than naive O(n²) LCS.
-
-### System Design
-**Q:** How would you scale this to handle large repositories?  
-**A:** 1) Pack files to store multiple objects in one file, 2) Delta compression to store only diffs between similar objects, 3) Shallow clones to avoid full history, 4) Object caching in memory, 5) Parallel object reading.
-
-**Q:** How do you ensure data integrity?  
-**A:** 1) Content-addressable storage (hash mismatch = corruption detected), 2) Immutable objects (never modified after creation), 3) Cryptographic hashing (SHA-1), 4) Atomic file operations.
-
-### Performance
-**Q:** What's the time complexity of the status command?  
-**A:** O(n) where n = number of files. We scan working directory, compare with index (O(1) lookup), and compare with last commit tree (O(n) traversal). Can be optimized with filesystem watchers and index caching.
-
----
 
 ## 🆚 Comparison with Real Git
 
@@ -420,11 +390,7 @@ Tested on: Windows 11, Intel i7-11th Gen, 16GB RAM
 | Stash | ❌ | ✅ | (Can be added) |
 
 ---
-
-## 🤝 Contributing
-
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
+ 
 ### Development Setup
 ```bash
 # Clone repository
@@ -450,44 +416,7 @@ mypy .
 
 ---
 
-## 📖 Documentation
 
-- [**DESIGN.md**](DESIGN.md) - Architecture and design decisions
-- [**CONTRIBUTING.md**](CONTRIBUTING.md) - Development guidelines
-- [**LICENSE**](LICENSE) - MIT License
-
----
-
-## 🎯 Roadmap
-
-### Phase 1: Core (Completed ✅)
-- [x] Repository initialization
-- [x] File staging and commits
-- [x] Commit history
-- [x] Repository status
-
-### Phase 2: Branching (Completed ✅)
-- [x] Branch creation and deletion
-- [x] Branch switching
-- [x] Fast-forward merge
-- [x] Three-way merge with conflict detection
-
-### Phase 3: Advanced (Completed ✅)
-- [x] Interactive conflict resolution
-- [x] Web UI visualization
-- [x] Performance metrics dashboard
-- [x] .mygitignore support
-
-### Phase 4: Future Enhancements
-- [ ] Rebase command
-- [ ] Stash command
-- [ ] Remote operations (push, pull, fetch)
-- [ ] Pack files for large repos
-- [ ] Delta compression
-- [ ] Blame command
-- [ ] Tag support
-
----
 
 ## 🐛 Known Limitations
 
@@ -501,17 +430,15 @@ mypy .
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License  
 
 ---
 
 ## 👨‍💻 Author
 
 **Ankur Kumar Verma**
-- Email: ankurr2120@gmail.com
 - GitHub: [@AKV-7](https://github.com/AKV-7)
-- LinkedIn: [Ankur Verma](https://linkedin.com/in/ankur-verma-a66271222)
-
+ 
 ---
 
 ## 🙏 Acknowledgments
