@@ -21,10 +21,49 @@
 - **History**: Traverse commit graph (DAG) and view changes
 
 ### 🌟 Unique Features (Beyond Basic Git Tutorial)
-- **🖥️ Web UI**: Beautiful Flask-based visualization of commits, branches, and repository stats
+- **🖥️ Web UI Dashboard**: Beautiful Flask-based visualization of commits, branches, and repository stats
 - **🎯 Interactive Merge Conflict Resolution**: Choose "ours", "theirs", or manual edit for each conflict
 - **📊 Performance Metrics Dashboard**: Real-time statistics on compression ratio, object counts, and command performance
 - **📁 .mygitignore Support**: Gitignore-style file exclusion patterns
+
+---
+
+## 🌐 Web UI Dashboard
+
+Launch the interactive web interface to visualize your repository:
+
+```bash
+mygit serve
+# ✓ Starting MyGit Web UI...
+#   Repository: /path/to/your-repo
+#   URL: http://127.0.0.1:5000
+```
+
+Then open **http://localhost:5000** in your browser.
+
+### 📸 Screenshots
+
+<div align="center">
+  
+![MyGit Web UI - Dashboard](images/1.jpg)
+*Interactive dashboard showing branches, commits, and repository overview*
+
+![MyGit Web UI - Commit History](images/2.jpg)
+*Detailed commit history with branch visualization and statistics*
+
+![MyGit Web UI - Repository Details](images/3.jpg)
+*Repository statistics and performance metrics*
+
+</div>
+
+### Web UI Features:
+- 📊 **Interactive Commit Graph** - Visual timeline of your commit history
+- 🌿 **Branch Explorer** - See all branches and their commit pointers
+- 📈 **Repository Statistics** - Storage efficiency, object counts, compression ratios
+- 🔍 **Commit Details** - Click any commit to view changes, files, and metadata
+- 🎨 **Modern UI** - Responsive design with real-time API updates
+
+**Tech Stack:** Flask + Flask-CORS, REST API, Embedded HTML/CSS/JavaScript
 
 ---
 
@@ -173,6 +212,22 @@ mygit stats
 #   Compressed Size: 18.7 KB
 #   Compression Ratio: 58.6%
 ```
+
+### 9. Launch Web UI 🌐
+```bash
+mygit serve
+# ✓ Starting MyGit Web UI...
+#   URL: http://127.0.0.1:5000
+#
+# Open http://localhost:5000 in your browser
+# Press Ctrl+C to stop
+```
+
+**Web UI includes:**
+- Interactive commit history visualization
+- Branch explorer with real-time updates
+- Repository statistics dashboard
+- Click commits to view detailed changes
 
 ---
 
