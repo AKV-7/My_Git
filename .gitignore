@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# MyGit test repositories
+test_repos/
+*.mygit/
+demo_repo/
+.mygit/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Unnecessary documentation (keep only README.md)
+DESIGN.md
+QUICKSTART.md
+PROJECT_COMPLETE.md
+SUCCESS.md
+HOW_TO_PUSH.md
+PUSH_DETAILS.md
+PUSH_SUMMARY.md
+CLEAN_PUSH_SUMMARY.md
+GITHUB_PUSH_GUIDE.md
+push_to_github.ps1
+push_to_github_timeline.ps1
+push_clean.ps1
