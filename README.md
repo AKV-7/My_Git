@@ -1,4 +1,4 @@
-# MyGit - Build Your Own Git
+# implementing Git - Version Control System  
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
